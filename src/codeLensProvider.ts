@@ -82,6 +82,9 @@ export class CodelensProvider implements vscode.CodeLensProvider {
       .getConfiguration("vs-babelfish")
       .get("language", "en");
     const result = await translateString(codeLens.text, language);
+
+    if (result.detectedLanguage.language === language) return null;
+
     codeLens.command = {
       title: result.translations[0].text,
       tooltip: "View all information",
