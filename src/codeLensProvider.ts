@@ -21,7 +21,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
 
   constructor() {
     // TODO: Tabs?
-    this.regex = /\/\**\s*([\S\n\r ]+?)\s*\*\//gm;
+    this.regex = /\/\*\*\s*([\S\n\r ]+?)\s*\*\//gm;
 
     vscode.workspace.onDidChangeConfiguration((_) => {
       this._onDidChangeCodeLenses.fire();
@@ -83,7 +83,7 @@ export class CodelensProvider implements vscode.CodeLensProvider {
       .get("language", "en");
     const result = await translateString(codeLens.text, language);
 
-    if (result.detectedLanguage.language === language) return null;
+    if (!result || result.detectedLanguage.language === language) return null;
 
     codeLens.command = {
       title: result.translations[0].text,

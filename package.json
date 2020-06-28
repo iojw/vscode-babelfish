@@ -29,9 +29,9 @@
     "configuration": {
       "properties": {
         "vs-babelfish.enableCodeLens": {
-		  "type": "boolean",
-		  "title": "Enable",
-		  "description": "Enable/Disable BabelFish",
+          "type": "boolean",
+          "title": "Enable",
+          "description": "Enable/Disable BabelFish",
           "default": true
         },
         "vs-babelfish.language": {
@@ -39,6 +39,18 @@
           "title": "Language",
           "description": "Your preferred language for BabelFish translation",
           "default": "ja"
+        },
+        "vs-babelfish.key": {
+          "type": "string",
+          "title": "Key",
+          "description": "Your API key for Microsoft Translator",
+          "default": ""
+        },
+        "vs-babelfish.region": {
+          "type": "string",
+          "title": "Region",
+          "description": "Your region for Microsoft Translator",
+          "default": ""
         }
       }
     }
