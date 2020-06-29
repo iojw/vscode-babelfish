@@ -1,65 +1,26 @@
-# vs-babelfish README
+_Developed in 24 hours for Microsoft's VSCode hackathon_
 
-This is the README for your extension "vs-babelfish". After writing up a brief description, we recommend including the following sections.
+# BabelFish
+
+Less than 20% of the world speak English.
+
+Yet, the current landscape of programming and software development is largely centered around the English language. More than just programming constructs like "for" or "else", the bigger issue lies with the large body of documentation for many software libraries that are written solely in English. Only few large companies have the resources to translate their documentation into different languages, and this leaves thousands of other libraries (many built by individuals and small groups) inaccessible to non-English speakers.
+
+BabelFish (inspired by the magical fish from the Hitchhiker's Guide to the Galaxy) aims to tackle this problem, making software development more inclusive and accessible for everyone.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+BabelFish is a VSCode extension that analyzes source files for documentation comments, detects the language they are written in, and automatically translates them if they do not match the user's native language. The translated text is then displayed using VSCode's CodeLens API. Currently, only JavaScript source files are supported.
 
-For example if there is an image subfolder under your extension project workspace:
+![Demo](demo/demo.gif)
+A demo with the language set to Mandarin
 
-\!\[feature X\]\(images/feature-x.png\)
+## Configuration
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Set your preferred language for translation inside the extension settings. You will also need to configure an API key for Azure's Translator service for this extension to be functional.
 
-## Requirements
+## Potential future updates
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-- `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-- Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-- Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Fix minor issues with the parsing and translation (e.g. the extension shouldn't translate parameters in the JSDoc)
+- Expand to support additional programming languages
+- Investigate how to improve the UX for displaying translated strings - with the current implementation, the screen can get cluttered when there are too many translations

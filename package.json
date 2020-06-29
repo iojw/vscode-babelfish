@@ -1,8 +1,10 @@
 {
   "name": "vs-babelfish",
+  "publisher": "isaacong",
+  "repository": {"url": "https://github.com/iojw/vscode-babelfish/"},
   "displayName": "BabelFish",
   "description": "Automatically translate code documentation to your preferred language",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.46.0"
   },
